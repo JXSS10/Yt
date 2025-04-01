@@ -116,9 +116,14 @@ def get_video_formats(url):
         'listformats': True,
         'quiet': True, # منع طباعة معلومات غير ضرورية
     }
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        formats = ydl.extract_formats(url)
-        return formats
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(url, download=False) # download=False here
+            formats = info_dict.get('formats', []) # Get formats from info_dict
+            return formats
+    except Exception as e:
+        print(f"Error in get_video_formats: {e}")
+        return None
 
 # --- معالج الرسائل النصية (روابط يوتيوب) ---
 @bot.on_message(filters.text)
