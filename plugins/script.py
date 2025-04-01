@@ -54,6 +54,20 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
 ⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n\n
 """
 
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS_PL = """Playlist Uploaded Successfully!
+
+**Total Videos Uploaded:** {}
+**Download Time:** {} seconds
+**Upload Time:** {} seconds"""
+
+    RCHD_TG_API_LIMIT_PL = """
+File **{}** is too big to be uploaded to Telegram.
+
+**File Size:** {}
+**Telegram API Limit:** {}
+
+Skipping this file from playlist and proceeding with the next one.""" # Added playlist specific message
+    # ... rest of your translations ...
 
     START_BUTTONS = InlineKeyboardMarkup(
         [[
