@@ -19,7 +19,7 @@ bot = Client(
 )
 
 # --- مجلد التحميل (تم استيراده من config.py) ---
-DOWNLOAD_FOLDER = DOWNLOAD_LOCATION # استخدام DOWNLOAD_LOCATION من config.py
+DOWNLOAD_FOLDER = Config.DOWNLOAD_LOCATION # استخدام DOWNLOAD_LOCATION من config.py
 if not os.path.exists(DOWNLOAD_FOLDER):
     os.makedirs(DOWNLOAD_FOLDER)
 
