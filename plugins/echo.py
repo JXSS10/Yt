@@ -1,7 +1,5 @@
 # ©️ Venom | @LegendSources l
 
-
-
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -16,15 +14,15 @@ from pyrogram import filters
 from pyrogram import Client, enums
 from plugins.functions.forcesub import handle_force_subscribe
 from plugins.functions.display_progress import humanbytes
-from plugins.functions.help_uploadbot import DownLoadFile
-from plugins.functions.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
+from plugins.functions.help_uploadbot import DownLoadFile # Although imported, it's not used in this snippet. Consider removing if unused.
+from plugins.functions.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter # TimeFormatter is imported but not used. Consider removing.
+from hachoir.metadata import extractMetadata # Imported but not used. Consider removing.
+from hachoir.parser import createParser # Imported but not used. Consider removing.
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import UserNotParticipant
+from pyrogram.errors import UserNotParticipant # Imported but already handled in `handle_force_subscribe`. No need to import directly here.
 from plugins.functions.ran_text import random_char
 from plugins.database.add import add_user_to_database
-from pyrogram.types import Thumbnail
+from pyrogram.types import Thumbnail # Imported but not used in FORMAT_SELECTION translation. Consider using or removing.
 
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
@@ -224,9 +222,9 @@ async def echo(bot, update):
                     InlineKeyboardButton(
                         "🎵 ᴍᴘ𝟹 " + "(" + "320 ᴋʙᴘs" + ")", callback_data=cb_string.encode("UTF-8"))
                 ])
-                inline_keyboard.append([                 
+                inline_keyboard.append([
                     InlineKeyboardButton(
-                        "⛔️ ᴄʟᴏsᴇ", callback_data='close')               
+                        "⛔️ ᴄʟᴏsᴇ", callback_data='close')
                 ])
         else:
             format_id = response_json["format_id"]
@@ -255,7 +253,7 @@ async def echo(bot, update):
         await chk.delete()
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.FORMAT_SELECTION.format(Thumbnail) + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
+            text=Translation.FORMAT_SELECTION.format(Thumbnail) + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD, # Thumbnail is passed to format but not used in Translation.FORMAT_SELECTION
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=update.id
@@ -282,4 +280,3 @@ async def echo(bot, update):
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=update.id
         )
-
