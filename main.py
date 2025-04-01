@@ -13,9 +13,9 @@ from plugins.config import Config
 # --- تهيئة البوت ---
 bot = Client(
     "URL UPLOADER BOT", # استخدام SESSION_NAME من config.py
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN
 )
 
 # --- مجلد التحميل (تم استيراده من config.py) ---
