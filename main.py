@@ -4,8 +4,7 @@ import yt_dlp
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import MessageNotModified
-from plugins.config import API_ID, API_HASH, BOT_TOKEN, DOWNLOAD_LOCATION, SESSION_NAME # استيراد المتغيرات من config.py
-
+from plugins.config import Config
 # --- بيانات البوت (تم استيرادها من config.py) ---
 # API_ID = ваш_api_id  # استبدل بـ API ID الخاص بك -  **الآن مستورد من config.py**
 # API_HASH = "ваш_api_hash"  # استبدل بـ API Hash الخاص بك - **الآن مستورد من config.py**
