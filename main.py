@@ -241,10 +241,5 @@ async def upload_progress_callback(current, total, status_message, user_id, vide
 
 # --- تشغيل البوت ---
 if __name__ == "__main__":
-    logger.info("Bot starting...")
-    try:
-        bot.run()
-    except Exception as e:
-        logger.error(f"Bot encountered a critical error: {e}", exc_info=True)
-    finally:
-        logger.info("Bot stopped.")
+    print("البوت يعمل...")
+    bot.run()
