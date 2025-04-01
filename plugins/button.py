@@ -195,7 +195,6 @@ async def youtube_dl_call_back(bot, update):
                 thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
                 await update.message.reply_video(
                     video=download_directory,
-                    video=download_directory,
                     caption=description,
                     duration=duration,
                     width=width,
@@ -215,7 +214,6 @@ async def youtube_dl_call_back(bot, update):
                 thumbnail = await Gthumb01(bot, update)
                 await update.message.reply_audio(
                     audio=download_directory,
-                    audio=download_directory,
                     caption=description,
                     duration=duration,
                     thumb=thumbnail,
@@ -231,7 +229,7 @@ async def youtube_dl_call_back(bot, update):
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
                 await update.message.reply_video_note(
                     video_note=download_directory,
-                    video_note=download_directory,
+                    caption=description,
                     duration=duration,
                     length=width,
                     thumb=thumbnail,
