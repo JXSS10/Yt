@@ -12,7 +12,7 @@ from plugins.config import Config
 
 # --- تهيئة البوت ---
 bot = Client(
-    SESSION_NAME, # استخدام SESSION_NAME من config.py
+    "URL UPLOADER BOT", # استخدام SESSION_NAME من config.py
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN
